@@ -5,7 +5,7 @@
 <head>
     <base href="">
     <meta charset="utf-8" />
-    <title>Dashboard</title>
+    <title>@yield('title')</title>
     <meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <!--begin::Fonts-->
@@ -19,6 +19,7 @@
     <link href="{{asset('backend')}}/assets/plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('backend')}}/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="{{asset('backend')}}/assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('backend')}}/assets/css/jpreview.css">
     <!-- include summernote css/ -->
     <link href="{{asset('backend')}}/assets/css/summernote.min.css" rel="stylesheet">
     <!--end::Global Theme Styles-->
@@ -108,7 +109,7 @@
                     <!--begin::Menu Container-->
                     <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
                         <!--begin::Menu Nav-->
-                       @include('backend.layouts.sidebar')
+                        @include('backend.layouts.sidebar')
                         <!--end::Menu Nav-->
                     </div>
                     <!--end::Menu Container-->
@@ -235,7 +236,7 @@
                                 </div>
                                 <!--end::Toggle-->
                                 <!--begin::Dropdown-->
-                                
+
                                 <!--end::Dropdown-->
                             </div>
                             <!--end::Notifications-->
@@ -473,12 +474,20 @@
                             </div>
                             <!--end::Languages-->
                             <!--begin::User-->
+
+                            <?php
+
+                            use Illuminate\Support\Facades\Auth;
+
+                            $get_name = Auth::user()->name;
+                            $first_char = mb_substr($get_name, 0, 1);
+                            ?>
                             <div class="topbar-item">
                                 <div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
                                     <span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-                                    <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
+                                    <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{Auth::user()->name}}</span>
                                     <span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-                                        <span class="symbol-label font-size-h5 font-weight-bold">S</span>
+                                        <span class="symbol-label font-size-h5 font-weight-bold">{{ $first_char }}</span>
                                     </span>
                                 </div>
                             </div>
@@ -536,12 +545,18 @@
             <!--begin::Header-->
             <div class="d-flex align-items-center mt-5">
                 <div class="symbol symbol-100 mr-5">
-                    <div class="symbol-label" style="background-image:url('assets/media/users/300_21.jpg')"></div>
+                    <div class="symbol-label" style="background-image:url({{asset(Auth::user()->image)}})"></div>
                     <i class="symbol-badge bg-success"></i>
                 </div>
                 <div class="d-flex flex-column">
                     <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{Auth::user()->name}}</a>
-                    <div class="text-muted mt-1">Application Developer</div>
+                    <div class="text-muted mt-1">
+                        @if(Auth::user()->designation)
+                        {{Auth::user()->designation}}
+                        @else
+                        Designation
+                        @endif
+                    </div>
                     <div class="navi mt-2">
                         <a href="#" class="navi-item">
                             <span class="navi-link p-0 pb-2">
@@ -575,7 +590,7 @@
             <!--begin::Nav-->
             <div class="navi navi-spacer-x-0 p-0">
                 <!--begin::Item-->
-                <a href="custom/apps/user/profile-1/personal-information.html" class="navi-item">
+                <a href="{{route('admin.profile')}}" class="navi-item">
                     <div class="navi-link">
                         <div class="symbol symbol-40 bg-light mr-3">
                             <div class="symbol-label">
@@ -784,13 +799,13 @@
         <!--end::Content-->
     </div>
     <!-- end::User Panel-->
- 
+
     <!--begin::Quick Panel-->
     <div id="kt_quick_panel" class="offcanvas offcanvas-right pt-5 pb-10">
         <!--begin::Header-->
         <div class="offcanvas-header offcanvas-header-navs d-flex align-items-center justify-content-between mb-5">
             <ul class="nav nav-bold nav-tabs nav-tabs-line nav-tabs-line-3x nav-tabs-primary flex-grow-1 px-10" role="tablist">
-               
+
                 <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#kt_quick_panel_settings">Settings</a>
                 </li>
@@ -805,7 +820,7 @@
         <!--begin::Content-->
         <div class="offcanvas-content px-10">
             <div class="tab-content">
-                
+
                 <!--begin::Tabpane-->
                 <div class="tab-pane fade show pt-3 pr-5 mr-n5" id="kt_quick_panel_settings" role="tabpanel">
                     <form class="form">
@@ -933,7 +948,7 @@
         <!--end::Content-->
     </div>
     <!--end::Quick Panel-->
-  
+
     <!--begin::Scrolltop-->
     <div id="kt_scrolltop" class="scrolltop">
         <span class="svg-icon">
@@ -949,12 +964,7 @@
         </span>
     </div>
     <!--end::Scrolltop-->
-    <!--begin::Sticky Toolbar-->
-
-    <!--end::Sticky Toolbar-->
-    <!--begin::Demo Panel-->
-   
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
     <script src="{{asset('backend')}}/assets/plugins/global/plugins.bundle.js"></script>
     <script src="{{asset('backend')}}/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
     <script src="{{asset('backend')}}/assets/js/scripts.bundle.js"></script>
@@ -970,6 +980,8 @@
     <!--begin::Page Scripts(used by this page)-->
     <script src="{{asset('backend')}}/assets/js/pages/widgets.js"></script>
     <!--end::Page Scripts-->
+    <script src="{{asset('backend')}}/assets/js/bootstrap-prettyfile.js"></script>
+    <script type="text/javascript" src="{{asset('backend')}}/assets/js/jpreview.js"></script>
     <!-- include summernote/js -->
     <script src="{{asset('backend')}}/assets/js/summernote.min.js"></script>
     <!-- Sweetalert -->
