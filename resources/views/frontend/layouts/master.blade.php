@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-md-6 align-self-center">
                     <div class="ht-email">
-                        <span class="mr-3"><i class="fa fa-phone mr-1"></i>01732805218</span>
+                        <span class="mr-3"><i class="fa fa-phone mr-1"></i>+917404606419</span>
                         <span><i class="fa fa-envelope mr-1"></i> info@codetechbd.com</span>
                     </div>
                 </div>

@@ -65,7 +65,7 @@
                 <div class="col">
                     <div class="section-title">
                         <h2>Our Trainings</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Enhance your technical skills with CodeTechBD.com's training program. Learn programming, web development, data science, cybersecurity, cloud computing, and more. Enroll today for a successful career.</p>
                     </div>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                 <div class="col">
                     <div class="section-title">
                         <h2>Our Satisfictions</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique laborum dolores amet nostrum obcaecati maiores</p>
+                        <p>Client success is our priority. We take pride in delivering top-notch IT solutions, exceptional customer service, and fostering long-lasting partnerships. Your satisfaction fuels our passion for excellence.</p>
                     </div>
                 </div>
             </div>
@@ -218,7 +218,7 @@
                 <div class="col">
                     <div class="section-title">
                         <h2>WHY CLIENTS CHOOSE US</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Our clients trust us for our expertise, reliability, and commitment to their success. We offer tailored IT solutions, timely delivery, and exceptional support, ensuring their business goals are achieved.</p>
                     </div>
                 </div>
             </div>
