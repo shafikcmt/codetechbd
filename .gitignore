@@ -8,7 +8,9 @@
 .phpunit.result.cache
 docker-compose.override.yml
 Homestead.json
+composer.json
 Homestead.yaml
+.cpanel.yml
 npm-debug.log
 yarn-error.log
 /.idea
