@@ -62,10 +62,6 @@
   @include('frontend.layouts.header')
 
 
-    <!--start slider area-->
-    @include('frontend.layouts.slider')
-    <!--end slider area-->
-
     @yield('content')
 
 
