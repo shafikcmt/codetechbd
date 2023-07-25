@@ -2,6 +2,9 @@
 @section('content')
     <section class="contact-us py-5">
         <div class="container">
+            @if (session()->has('message'))
+            <div class="alert alert-success alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{ session()->get('message') }}</div>
+            @endif
             <div class="contact-us-box bg-white p-5">
                 <div class="row">
                     <div class="col">
@@ -63,11 +66,11 @@
                         <div class="contact-us-details">
                             <div class="office-address">
                                 <div class="c-address">
-                                    <p><i class="fa fa-map-marker text-custom mr-1"></i> Address - Thakurgaon, Bangladesh
+                                    <p><i class="fa fa-map-marker text-custom mr-1"></i> Address - Bangladesh
                                     </p>
-                                    <p><i class="fa fa-phone text-custom mr-1"></i> Mobile - 01755430927</p>
+                                    <p><i class="fa fa-phone text-custom mr-1"></i> Mobile - 745454567867</p>
                                     <p><i class="fa fa-envelope text-custom mr-1"></i> Email -
-                                        imranahmed.developer@gmail.com</p>
+                                       developer@gmail.com</p>
                                 </div>
                             </div>
                         </div>

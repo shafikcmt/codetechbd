@@ -19,7 +19,7 @@ class FrontendController extends Controller
     }
     public function contactStore(ContactRequest $request){
         (new ContactRepository)->storeByRequest($request);
-        return redirect()->back()->with('success','Successfully Send');
+        return redirect()->back()->with('message','Successfully Send');
 
     }
 }

@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubcategoryController;
-use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,7 +62,14 @@ Route::middleware(['auth'])->name('admin.')->group(function(){
     });
     Route::group(['prefix'=>'/admin/dashboard'],function(){
         Route::resource('portfolio',PortfolioController::class);
-        Route::post('portfolio/status/{id}',[SliderController::class,'status'])->name('portfolio.status');
+        Route::post('portfolio/status/{id}',[PortfolioController::class,'status'])->name('portfolio.status');
+
+    });
+
+    Route::group(['prefix'=> '/admin/dashboard'],function(){
+        Route::get('/inbox/message',[ContactController::class,'inboxMessage'])->name('contact.index');
+        Route::get('/inbox/delete/{contact}',[ContactController::class,'delete'])->name('contact.delete');
+        Route::post('/inbox/status/{id}',[ContactController::class,'inboxStatus'])->name('message.status');
     });
 });
 
