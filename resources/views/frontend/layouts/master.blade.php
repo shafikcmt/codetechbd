@@ -31,6 +31,7 @@
 </head>
 
 <body>
+    @include('frontend.layouts._liveChat')
     <!-- preloader start -->
     <div id="pre-loader"> <img src="{{asset('frontend')}}/asset/images/preloader-120.svg" alt=""> </div>
     <!-- preloader end -->
