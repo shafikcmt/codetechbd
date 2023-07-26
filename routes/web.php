@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ProfileController;
@@ -21,16 +22,21 @@ use Illuminate\Support\Facades\Route;
 
 
 // Start Frontend Route here
-Route::get('/',[FrontendController::class,'index'])->name("home");
+// Route::get('/',[FrontendController::class,'index'])->name("home");
+Route::controller(FrontendController::class)->group(function(){
+    Route::get('/','index')->name('home');
+    Route::get('/contact','contact')->name('contact');
+    Route::post('/contact/store','contactStore')->name('contact.store');
+});
 
 Route::middleware(['auth'])->name('admin.')->group(function(){
     Route::get('/admin/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
-    
+
         Route::get('/admin/profile',[ProfileController::class,'index'])->name('profile');
         Route::post('/admin/personal-info/update/{id}', [ProfileController::class, 'update'])->name('personal.update');
         Route::get('/admin/change-password',[ProfileController::class,'changePass'])->name('change.passowrd');
         Route::post('/admin/password/update/{id}',[ProfileController::class,'UpdatePass'])->name('update.password');
-    
+
     Route::group(['prefix'=> '/admin/dashboard'],function(){
         Route::resource('admin',AdminController::class);
         Route::get('admin/destroy/{id}',[AdminController::class,'destroy'])->name('admin.delete');
@@ -56,7 +62,14 @@ Route::middleware(['auth'])->name('admin.')->group(function(){
     });
     Route::group(['prefix'=>'/admin/dashboard'],function(){
         Route::resource('portfolio',PortfolioController::class);
-        Route::post('portfolio/status/{id}',[SliderController::class,'status'])->name('portfolio.status');
+        Route::post('portfolio/status/{id}',[PortfolioController::class,'status'])->name('portfolio.status');
+
+    });
+
+    Route::group(['prefix'=> '/admin/dashboard'],function(){
+        Route::get('/inbox/message',[ContactController::class,'inboxMessage'])->name('contact.index');
+        Route::get('/inbox/delete/{contact}',[ContactController::class,'delete'])->name('contact.delete');
+        Route::post('/inbox/status/{id}',[ContactController::class,'inboxStatus'])->name('message.status');
     });
 });
 
