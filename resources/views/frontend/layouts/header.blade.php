@@ -3,13 +3,21 @@
   <header class="wow fadeInDown clearfix" data-wow-duration="1s">
         <nav class="navbar">
             <div class="container">
+<<<<<<< HEAD
                 <a class="navbar-brand align-self-center" href="index.html">
+=======
+                <a class="navbar-brand align-self-center" href="{{ route('home')}}">
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                     <img src="{{asset('frontend')}}/asset/logo/logo.jpeg" class="logo" alt="Logo">
                 </a>
 
                 <div class="menu-area ml-auto">
                     <ul>
+<<<<<<< HEAD
                         <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+=======
+                        <li><a href="{{ route('home')}}"><i class="fa fa-home"></i> Home</a></li>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                         <li class="dd-btn1"><a href="#!"> About Us <i class="fa fa-angle-down"></i></a>
 
                             <div class="dropdown-menu1">
@@ -116,7 +124,11 @@
                         </li>
 
 
+<<<<<<< HEAD
                         <li><a href="contact.html"> Contact</a></li>
+=======
+                        <li><a href="{{ route('contact')}}"> Contact</a></li>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                     </ul>
                 </div>
                 <i class="fa fa-bars menu-icon"></i>

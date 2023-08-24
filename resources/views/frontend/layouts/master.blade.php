@@ -63,10 +63,13 @@
   @include('frontend.layouts.header')
 
 
+<<<<<<< HEAD
     <!--start slider area-->
     @include('frontend.layouts.slider')
     <!--end slider area-->
 
+=======
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
     @yield('content')
 
 
@@ -209,4 +212,8 @@
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c

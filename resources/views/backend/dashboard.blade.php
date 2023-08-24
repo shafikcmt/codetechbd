@@ -8,7 +8,11 @@
 			<!--begin::Info-->
 			<div class="d-flex align-items-center flex-wrap mr-2">
 				<!--begin::Page Title-->
+<<<<<<< HEAD
 				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5"><?php custom_slider_function(); ?></h5>
+=======
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Dashboard</h5>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
 				<!--end::Page Title-->
 				<!--begin::Actions-->
 				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>

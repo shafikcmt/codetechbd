@@ -119,6 +119,7 @@
         </div>
     </li>
     <!--End Slider-->
+<<<<<<< HEAD
     <!--Menu-->
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
@@ -169,6 +170,8 @@
         </div>
     </li>
     <!--End Menu-->
+=======
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
     <!--Category-->
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
@@ -191,6 +194,7 @@
             <ul class="menu-subnav">
                 <li class="menu-item menu-item-parent" aria-haspopup="true">
                     <span class="menu-link">
+<<<<<<< HEAD
                         <span class="menu-text">Category</span>
                     </span>
                 </li>
@@ -200,17 +204,36 @@
                             <span></span>
                         </i>
                         <span class="menu-text">Add Category</span>
+=======
+                        <span class="menu-text">category</span>
+                    </span>
+                </li>
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('admin.category.index')}}" class="menu-link menu-toggle">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">Category</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                         <i class="menu-arrow"></i>
                     </a>
 
                 </li>
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+<<<<<<< HEAD
                     <a href="{{ route('admin.slider.index')}}" class="menu-link menu-toggle">
                         <i class="menu-bullet menu-bullet-line">
                             <span></span>
                         </i>
                         <span class="menu-text">Category List</span>
+=======
+                    <a href="{{ route('admin.subcategory.index')}}" class="menu-link menu-toggle">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">Subcategory</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                         <i class="menu-arrow"></i>
                     </a>
 
@@ -219,7 +242,11 @@
         </div>
     </li>
     <!--End Category-->
+<<<<<<< HEAD
     <!--Subategory-->
+=======
+    <!--Portfolio-->
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
             <span class="svg-icon menu-icon">
@@ -233,7 +260,11 @@
                 </svg>
                 <!--end::Svg Icon-->
             </span>
+<<<<<<< HEAD
             <span class="menu-text">Subategory</span>
+=======
+            <span class="menu-text">Portfolio</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
             <i class="menu-arrow"></i>
         </a>
         <div class="menu-submenu">
@@ -241,6 +272,7 @@
             <ul class="menu-subnav">
                 <li class="menu-item menu-item-parent" aria-haspopup="true">
                     <span class="menu-link">
+<<<<<<< HEAD
                         <span class="menu-text">Subategory</span>
                     </span>
                 </li>
@@ -250,17 +282,36 @@
                             <span></span>
                         </i>
                         <span class="menu-text">Add Subategory</span>
+=======
+                        <span class="menu-text">portfolio</span>
+                    </span>
+                </li>
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('admin.portfolio.index')}}" class="menu-link menu-toggle">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">All Portfolio</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                         <i class="menu-arrow"></i>
                     </a>
 
                 </li>
 
                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+<<<<<<< HEAD
                     <a href="{{ route('admin.slider.index')}}" class="menu-link menu-toggle">
                         <i class="menu-bullet menu-bullet-line">
                             <span></span>
                         </i>
                         <span class="menu-text">Subategory List</span>
+=======
+                    <a href="{{ route('admin.portfolio.create')}}" class="menu-link menu-toggle">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">Add Portfolio</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                         <i class="menu-arrow"></i>
                     </a>
 
@@ -268,8 +319,13 @@
             </ul>
         </div>
     </li>
+<<<<<<< HEAD
     <!--End Subategory-->
     <!--Project-->
+=======
+    <!--End Portfolio-->
+    <!--Message-->
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
         <a href="javascript:;" class="menu-link menu-toggle">
             <span class="svg-icon menu-icon">
@@ -283,7 +339,11 @@
                 </svg>
                 <!--end::Svg Icon-->
             </span>
+<<<<<<< HEAD
             <span class="menu-text">Project</span>
+=======
+            <span class="menu-text">inbox</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
             <i class="menu-arrow"></i>
         </a>
         <div class="menu-submenu">
@@ -291,6 +351,7 @@
             <ul class="menu-subnav">
                 <li class="menu-item menu-item-parent" aria-haspopup="true">
                     <span class="menu-link">
+<<<<<<< HEAD
                         <span class="menu-text">Project</span>
                     </span>
                 </li>
@@ -311,6 +372,17 @@
                             <span></span>
                         </i>
                         <span class="menu-text">Project List</span>
+=======
+                        <span class="menu-text">message</span>
+                    </span>
+                </li>
+                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('admin.contact.index')}}" class="menu-link menu-toggle">
+                        <i class="menu-bullet menu-bullet-line">
+                            <span></span>
+                        </i>
+                        <span class="menu-text">Message</span>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
                         <i class="menu-arrow"></i>
                     </a>
 
@@ -318,6 +390,7 @@
             </ul>
         </div>
     </li>
+<<<<<<< HEAD
     <!--End Project-->
     <!--Brand-->
     <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -624,6 +697,11 @@
     </li>
     <!--End settings-->
  
+=======
+    <!--End Message-->
+
+
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
 
 
 
@@ -635,5 +713,10 @@
     </li>
  -->
 
+<<<<<<< HEAD
  
 </ul>
+=======
+
+</ul>
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c

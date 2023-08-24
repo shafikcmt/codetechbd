@@ -1,24 +1,15 @@
 <?php
 
-<<<<<<< HEAD
-namespace App\Http\Controllers\backend;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-class CategoryController extends Controller
-{
-    //
-=======
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Str;
 
-class CategoryController extends Controller
+class SubcategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,8 +18,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $datas = Category::latest()->get();
-        return view('backend.category.index-category',compact('datas'));
+        $datas = Subcategory::latest()->get();
+        $categorys = Category::all();
+        return view('backend.category.index-subcategory',compact('datas','categorys'));
     }
 
     /**
@@ -50,9 +42,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'category_name' => 'required|unique:categories,name',
-            'category_icon' => 'required',
-            'description' => 'required'
+            'category_id' => 'required',
+            'subcategory_name' => 'required|unique:subcategories,name',
             
         ]);
         if ($validator->fails()) {
@@ -63,17 +54,18 @@ class CategoryController extends Controller
             return redirect()->back()->withErrors($validator)->withInput()->with($notification);
         }
 
-        $data = new Category();
-        $data->name = $request->category_name;
-        $data->icon = $request->category_icon;
+        $data = new Subcategory();
+        $data->category_id = $request->category_id;
+        $data->name = $request->subcategory_name;
+        $data->icon = $request->subcategory_icon;
         $data->description = $request->description;
 
-        $data->slug = Str::slug($request->category_name);
+        $data->slug = Str::slug($request->subcategory_name);
        
         $data->save();
 
         $notification = array(
-            'message' => 'Category created successfully!',
+            'message' => 'Subcategory created successfully!',
             'alert-type' => 'success'
         );
 
@@ -112,22 +104,22 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'category_name' => 'required|unique:categories,name',
-            'category_icon' => 'required',
-            'description' => 'required'
+            'category_id' => 'required',
+            'subcategory_name' => 'required|unique:subcategories,name',
         ]);
 
-        $data = Category::find($id);
-        $data->name = $request->category_name;
-        $data->icon = $request->category_icon;
+        $data = Subcategory::find($id);
+        $data->category_id = $request->category_id;
+        $data->name = $request->subcategory_name;
+        $data->icon = $request->subcategory_icon;
         $data->description = $request->description;
 
-        $data->slug = Str::slug($request->category_name);
+        $data->slug = Str::slug($request->subcategory_name);
        
         $data->save();
 
         $notification = array(
-            'message' => 'Category updated successfully!',
+            'message' => 'Subcategory updated successfully!',
             'alert-type' => 'success'
         );
 
@@ -142,10 +134,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $data = Category::find($id);
+        $data = Subcategory::find($id);
         $data->delete();
         $notification = array(
-            'message' => 'Category deleted successfully!',
+            'message' => 'Subcategory deleted successfully!',
             'alert-type' => 'success'
         );
         return redirect()->back()->with($notification);
@@ -153,7 +145,7 @@ class CategoryController extends Controller
     
     public function status(Request $request, $id)
     {
-        $data = Category::find($id);
+        $data = Subcategory::find($id);
         if($request->status == 1){
             $data->status = $request->status;
         }else{
@@ -168,5 +160,4 @@ class CategoryController extends Controller
         );
         return redirect()->back()->with($notification);
     }
->>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
 }

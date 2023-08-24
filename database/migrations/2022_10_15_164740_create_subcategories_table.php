@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSlidersTable extends Migration
+class CreateSubcategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateSlidersTable extends Migration
      */
     public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('subcategories', function (Blueprint $table) {
             $table->id();
-            $table->string('image');
-<<<<<<< HEAD
-            $table->integer('status')->default(1);
-=======
+            $table->string('category_id');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('icon')->nullable();
+            $table->string('description')->nullable();
             $table->string('status')->default(1);
->>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateSlidersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('subcategories');
     }
 }

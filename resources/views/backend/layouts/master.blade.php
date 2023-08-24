@@ -980,6 +980,10 @@
     <!--begin::Page Scripts(used by this page)-->
     <script src="{{asset('backend')}}/assets/js/pages/widgets.js"></script>
     <!--end::Page Scripts-->
+<<<<<<< HEAD
+=======
+    <!-- Preview image js code -->
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
     <script src="{{asset('backend')}}/assets/js/bootstrap-prettyfile.js"></script>
     <script type="text/javascript" src="{{asset('backend')}}/assets/js/jpreview.js"></script>
     <!-- include summernote/js -->

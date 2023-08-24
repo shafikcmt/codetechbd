@@ -1,5 +1,13 @@
 @extends('frontend.layouts.master')
 @section('content')
+<<<<<<< HEAD
+=======
+
+
+    <!--start slider area-->
+    @include('frontend.layouts.slider')
+    <!--end slider area-->
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
 <!--start what we do section-->
 <section class="what-we-do clearfix pt-5 pb-4 bg-light">
         <div class="container">
@@ -539,5 +547,9 @@
 
         </div>
     </section>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c5b7ee35f7187edf8e8bf1db70752554ac336c1c
     @endsection
